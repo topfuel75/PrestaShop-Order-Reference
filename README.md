@@ -39,7 +39,7 @@ In the configuration page you can define a format. Let's take the example format
 
 **Order ID**: 123456
 
-**Output**: `456`
+**Output**: `3456`
 
 The random example is shown once you save the configuration.
 
