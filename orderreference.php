@@ -169,6 +169,10 @@ class Orderreference extends Module
 				if ($vars[2] == 'capitalize') {
 					$reference .= strtoupper(sprintf("$vars[1]", $this->getVariable($vars[0], $id_order)));
 				}
+			} elseif (count($vars)==4) {
+				if ($vars[2] == 'last') {
+					$reference .= substr(strtoupper(sprintf("$vars[1]", $this->getVariable($vars[0], $id_order))), -($vars[3]));
+				}				
 			} else {
 				$reference .= $vars[0];
 			}
@@ -212,7 +216,7 @@ class Orderreference extends Module
 
     public function getRandomReference()
     {
-        $id_order = Db::getInstance()->getValue('SELECT id_order FROM '._DB_PREFIX_.'orders ORDER BY RAND()');
+        $id_order = Db::getInstance()->getValue('SELECT id_order FROM '._DB_PREFIX_.'orders ORDER BY id_order DESC');
         return $this->getFormattedReference($id_order);
     }
 
