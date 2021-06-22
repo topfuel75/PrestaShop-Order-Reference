@@ -33,6 +33,14 @@ In the configuration page you can define a format. Let's take the example format
 
 **Output**: `20000161`
 
+### Example 4: Last characters from order id
+
+**Config value**: `{order->id:%6d:last:4}`
+
+**Order ID**: 123456
+
+**Output**: `456`
+
 The random example is shown once you save the configuration.
 
 Every format needs a modifier, like `%d` (digit) and `%s` (string).
